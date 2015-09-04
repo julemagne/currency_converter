@@ -1,4 +1,5 @@
 #class CurrencyConverter
+require './Currency'
 
 class CurrencyConverter
 
@@ -6,26 +7,13 @@ class CurrencyConverter
     @c = {USD: 1.0, EUR: 0.89805, GBP: 0.65534, JPY: 119.959, THB: 32.8280}
   end
 
-  def convert
-    if !@c.values.include?(c)
-      puts "UnknownCurrencyCodeError: #{@c} does not have a recorded value."
+  def convert(first, second)
+    if require first_currency_object.cc != second_currency_oject.cc
+      raise UnknownCurrencyCodeError, 'UnknownCurrencyCodeError: One or both of your currencies does not have a recorded value.'
     else
-      currency_from = @c(key)
-      currency_to = @c(key)
-      @value = @value * currency_to/currency_from
-      puts "Your converted value is #{@value}."
+      multiplied = first * second
+      puts "Your converted value is #{second_currency_oject.cc}#{multiplied}."
+    end
   end
-
-
-
-end
-
-
-
-
-access @code from dolla.code
-
-def
-  if dolla.code
 
 end

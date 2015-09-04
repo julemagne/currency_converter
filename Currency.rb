@@ -22,27 +22,27 @@ class Currency
     if cc != nil
         @value = value
         @cc = cc
-        break
     else
-      if (input.downcase.include? "$" || input.downcase.include? "usd" || input.downcase.include? "dollar")
+      input = value
+      if (input.downcase.include? ("$" || "usd" || "dollar"))
         @cc = :USD
         input = input.gsub(/[^\d\.]/, "")
         #RegEx //searches for everything inside and replaces with what is inside "".
         #^ means everything except, d means digits, and . means .
         @value = input.to_f
-      elsif (input.downcase.include? "eur" || input.downcase.include? "€")
+      elsif (input.downcase.include? ("eur" || "€"))
         @cc = :EUR
         input = input.gsub(/[^\d\.]/, "")
         @value = input.to_f
-      elsif (input.downcase.include? "gbp" || input.downcase.include? "£" || input.downcase.include? "pound")
+      elsif (input.downcase.include? ("gbp" || "£" || "pound"))
         @cc = :GBP
         input = input.gsub(/[^\d\.]/, "")
         @value = input.to_f
-      elsif (input.downcase.include? "yen" || input.downcase.include? "jpy" || input.downcase.include? "円" || input.downcase.include? "圓" || input.downcase.include? "¥")
+      elsif (input.downcase.include? ("yen" || "jpy" || "円" || "圓" || "¥"))
         @cc = :JPY
         input = input.gsub(/[^\d\.]/, "")
         @value = input.to_f
-      elsif (input.downcase.include? "baht" || input.downcase.include? "บาท" || input.downcase.include? "฿" || input.downcase.include? "thb")
+      elsif (input.downcase.include? ("baht" || "บาท" || "฿" || "thb"))
         @cc = :THB
         input = input.gsub(/[^\d\.]/, "")
         @value = input.to_f
@@ -61,12 +61,15 @@ class Currency
   end
 
   def *(number)
-      @value = @value*number require Float(number) || Integer(number) rescue
+      @value = @value*number if isitnumber
   end
 
   def ==(compared_number)
      true if @value == compared_number.value && @cc == compared_number.cc
   end
 
+  def compared_currency_value()
+    cc_value = @cc
+  end
 
 end

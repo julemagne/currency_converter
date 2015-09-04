@@ -8,7 +8,7 @@ class CurrencyConverter
 
   def convert
     if !@c.values.include?(c)
-      puts "UnknownCurrencyCodeError: #{c} does not have a recorded value."
+      puts "UnknownCurrencyCodeError: #{@c} does not have a recorded value."
     else
       currency_from = @c(key)
       currency_to = @c(key)
@@ -17,5 +17,15 @@ class CurrencyConverter
   end
 
 
+
+end
+
+
+
+
+access @code from dolla.code
+
+def
+  if dolla.code
 
 end

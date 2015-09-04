@@ -3,8 +3,8 @@
 ###You can convert currency!
 
 ##Supported Currencies:
-*USD United States Dollar
-*EUR Euro
-*GBP Great Britain Pound
-*JPY Japanese Yen
-*THB Thai Baht
+* USD United States Dollar
+* EUR Euro
+* GBP Great Britain Pound
+* JPY Japanese Yen
+* THB Thai Baht

@@ -15,8 +15,8 @@ class CurrencyConverter
     if !@c.include?(first_currency_object.cc) || !@c.include?(currency)
       raise UnknownCurrencyCodeError, 'UnknownCurrencyCodeError: One or both of your currencies does not have a recorded value.'
     else
-      multiplied = first_currency_object.value * @c[currency.value] / @c[first_currency_object.value]
-      puts "Your converted value is #{multiplied}#{currency}."
+      multiplied = first_currency_object.value * @c[currency] / @c[first_currency_object.cc]
+      converted_currency_object = Currency.new(multiplied, currency)
     end
   end
 

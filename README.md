@@ -1,22 +1,21 @@
 #Currency Converter Program
 
 ###Create a currency object
-To create a currency object, you can either pass an amount of currency preceded by its currency symbol as a string, or the amount of the currency as a string and the currency code as a symbol as the arguments for the Currency class.
+To create a currency object, you can either pass an amount of currency preceded by its currency symbol as a string, or the amount of the currency as a number or string, and the currency code as a symbol as the arguments for the Currency class. No commas in your numbers, please.
 
 ###You can convert currency!
-To convert currency, enter amount of the first currency, currency code of the first currency as a symbol, amount of the second currency, and currency code of the second currency as a symbol as the arguments for the convert_currency method.
+To convert currency, initialize a CurrencyConverter object with a hash of exchange rates and currency code symbols as key value pairs, and call convert on it. Enter the first currency object, and the currency code of the currency you want to convert to as a symbol as the arguments for the convert method. No commas in your numbers, please.
 
 You can also
 * add
 * subtract
 * multiply
 * check if two currency objects are equal using ==
-
-Errors will return if you try to add or subtract different currencies.
+* receive sweet custom error messages
 
 ##Supported Currencies:
-* USD United States Dollar
-* EUR Euro
-* GBP Great Britain Pound
-* JPY Japanese Yen
-* THB Thai Baht
+* $ USD United States Dollar
+* € EUR Euro
+* £ GBP Great Britain Pound
+* ¥ JPY Japanese Yen
+* ฿ THB Thai Baht

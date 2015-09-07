@@ -17,7 +17,25 @@ class CurrencyTrader
     puts @old.c.to_a
     puts @starting.value
     puts @starting.cc
-    howtofindthebest[@current.c.key.each] = ((@old.c.value.each / @current.c.value.each))
+
+    # howtofindthebest = {}
+    # # ||= means if false/nil, =
+
+    # foo[:USD] ||= []
+    # foo[:USD] << val
+
+    # @old.c.keys.each do |key|
+    #  ratio = @old.c[key] / @current.c[key]
+    # end
+
+    # howtofindthebest[@current.c.key.each] = ((@old.c.value.each / @current.c.value.each))
+    @current.c.keys.each do |key|
+      a = Array.new
+      a << key
+    end
+
+    puts a
+    howtofindthebest = Hash[a.zip(b)]
     puts howtofindthebest.to_a #and get error :(
     # howtofindthebest = hash of current keys => old values / current values
     # usehighesttolowest = howtofindthebest.values.to_a.sort

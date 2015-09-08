@@ -13,22 +13,15 @@ class CurrencyTrader
 
   def invest
     a = @current.c.keys.to_a
-    # puts a
     b = []
     counter = 0
     while counter < a.count
       b << (@old.c[a[counter]] / @current.c[a[counter]])
       counter += 1
     end
-    # puts b
     howtofindthebest = Hash[a.zip(b)]
-    # puts howtofindthebest
     usehighesttolowest = howtofindthebest.values.to_a.sort
-    # puts usehighesttolowest
     highest = usehighesttolowest[-1]
-    # puts highest
-    # puts howtofindthebest.key(1.1423175338125988) == :THB
-    # puts howtofindthebest[:THB] == 1.1423175338125988
     puts "Invest your money in #{howtofindthebest.key(highest)} and you will have the highest return."
   end
 end

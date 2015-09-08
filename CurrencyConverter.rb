@@ -13,7 +13,7 @@ class CurrencyConverter
 
   def convert(first_currency_object, currency)
     if !@c.include?(first_currency_object.cc) || !@c.include?(currency)
-      raise UnknownCurrencyCodeError, 'UnknownCurrencyCodeError: One or both of your currencies does not have a recorded value.'
+      raise UnknownCurrencyCodeError, 'UnknownCurrencyCodeError: Currency not supported.'
     else
       multiplied = first_currency_object.value * @c[currency] / @c[first_currency_object.cc]
       converted_currency_object = Currency.new(multiplied, currency)

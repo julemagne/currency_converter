@@ -9,7 +9,7 @@ end
 class NoCurrencyError < Exception
 end
 
-class CurrencyNotFoundError < Exception
+class UnknownCurrencyCodeError < Exception
 end
 
 def isitnumber(input)
@@ -41,7 +41,7 @@ class Currency
       when "฿"
         @cc = :THB
       else
-        raise CurrencyNotFoundError, "Your currency is not supported."
+        raise UnknownCurrencyCodeError, "Currency not supported."
       end
       value[0] = ''
       @value = value.to_f
@@ -80,10 +80,6 @@ class Currency
      else
        false
      end
-  end
-
-  def compared_currency_value()
-    cc_value = @cc
   end
 
 end

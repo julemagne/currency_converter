@@ -1,7 +1,6 @@
-#CurrencyTrader class
+# CurrencyTrader class
 
 class CurrencyTrader
-
   attr_reader :current
   attr_reader :old
   attr_reader :starting
@@ -13,36 +12,23 @@ class CurrencyTrader
   end
 
   def invest
-    puts @current.c.to_a
-    puts @old.c.to_a
-    puts @starting.value
-    puts @starting.cc
-
-    # howtofindthebest = {}
-    # # ||= means if false/nil, =
-
-    # foo[:USD] ||= []
-    # foo[:USD] << val
-
-    # @old.c.keys.each do |key|
-    #  ratio = @old.c[key] / @current.c[key]
-    # end
-
-    # howtofindthebest[@current.c.key.each] = ((@old.c.value.each / @current.c.value.each))
-    @current.c.keys.each do |key|
-      a = Array.new
-      a << key
+    a = @current.c.keys.to_a
+    # puts a
+    b = []
+    counter = 0
+    while counter < a.count
+      b << (@old.c[a[counter]] / @current.c[a[counter]])
+      counter += 1
     end
-
-    puts a
+    # puts b
     howtofindthebest = Hash[a.zip(b)]
-    puts howtofindthebest.to_a #and get error :(
-    # howtofindthebest = hash of current keys => old values / current values
-    # usehighesttolowest = howtofindthebest.values.to_a.sort
+    # puts howtofindthebest
+    usehighesttolowest = howtofindthebest.values.to_a.sort
     # puts usehighesttolowest
+    highest = usehighesttolowest[-1]
+    # puts highest
+    # puts howtofindthebest.key(1.1423175338125988) == :THB
+    # puts howtofindthebest[:THB] == 1.1423175338125988
+    puts "Invest your money in #{howtofindthebest.key(highest)} and you will have the highest return."
   end
-
-
-
-
 end

@@ -60,6 +60,21 @@ trader = CurrencyTrader.new(converter, converter2, first_currency_object)
 
 trader.invest
 
+z = converter.convert(converter2.convert(first_currency_object, :EUR), :USD)
+puts z.value
+puts z.cc
+
+z = converter.convert(converter2.convert(first_currency_object, :GBP), :USD)
+puts z.value
+puts z.cc
+
+z = converter.convert(converter2.convert(first_currency_object, :JPY), :USD)
+puts z.value
+puts z.cc
+
+z = converter.convert(converter2.convert(first_currency_object, :THB), :USD)
+puts z.value
+puts z.cc
 
 
 #Atom plea

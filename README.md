@@ -13,6 +13,10 @@ You can also
 * check if two currency objects are equal using ==
 * receive sweet custom error messages
 
+###Currency Trader
+
+Currency trader will tell you what would have been the best way to invest in currency for the highest return given two hashes of currency exchange rates at two points in time!
+
 ##Supported Currencies:
 * $ USD United States Dollar
 * € EUR Euro
